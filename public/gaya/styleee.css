@@ -1,0 +1,283 @@
+/* Variabel Tema */
+:root {
+    --background-color-light: #f0f0f0;
+    --container-bg-light: #ffffff;
+    --container-shadow-light: rgba(0, 0, 0, 0.2);
+    --text-color-light: #000;
+    --btn-bg-light: #007bff;
+    --btn-bg-hover-light: #0056b3;
+
+    --background-color-dark: #121212;
+    --container-bg-dark: rgba(0, 0, 0, 0.8);
+    --container-shadow-dark: rgba(0, 0, 0, 0.4);
+    --text-color-dark: #fff;
+    --btn-bg-dark: #f39c12;
+    --btn-bg-hover-dark: #e67e22;
+    --icon-color-dark: #f39c12;
+}
+
+/* Global Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    color: var(--text-color-light);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: var(--background-color-light);
+    transition: background-color 0.3s ease;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 6px 20px var(--container-shadow-light);
+    max-width: 700px;
+    width: 90%;
+    background-color: rgba(255, 255, 255, 0.5); /* Warna semi-transparan */
+    backdrop-filter: blur(10px); /* Efek blur */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Profile Card */
+.profile-card {
+    display: flex;
+    align-items: center;
+    background: var(--container-bg-light);
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    padding: 20px;
+    width: 100%;
+    max-width: 700px;
+    text-align: left;
+    position: relative;
+    justify-content: space-between;
+}
+
+/* Profile Image */
+.profile-img {
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    margin-right: 20px;
+    border: 4px solid var(--btn-bg-light);
+}
+
+/* Profile Info */
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+#typing-text {
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--text-color-light);
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+
+.name {
+    font-size: 22px;
+    color: var(--text-color-light);
+    margin-bottom: 5px;
+}
+
+.from {
+    font-size: 18px;
+    color: var(--text-color-light);
+    margin-bottom: 5px;
+}
+
+.bio {
+    font-size: 16px;
+    color: var(--text-color-light);
+}
+
+/* Details Section */
+.details {
+    margin-top: 20px;
+}
+
+.details p {
+    margin: 8px 0;
+    font-size: 16px;
+    opacity: 0;
+    transform: translateX(100%);
+    animation: slide-in 0.5s forwards;
+}
+
+.details p:nth-child(1) { animation-delay: 0.5s; }
+.details p:nth-child(2) { animation-delay: 0.8s; }
+.details p:nth-child(3) { animation-delay: 1.1s; }
+.details p:nth-child(4) { animation-delay: 1.4s; }
+
+@keyframes slide-in {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Settings and Theme Toggle */
+.settings-container {
+    display: flex;
+    align-items: center;
+}
+
+.settings-container i,
+.theme-toggle i {
+    cursor: pointer;
+    font-size: 24px;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.settings-container i:hover,
+.theme-toggle i:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+    transform: scale(1.1);
+}
+
+.theme-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    padding: 5px;
+    margin-left: 10px;
+}
+
+/* Command Input Container */
+/* Command Input Container */
+#command-input-container {
+    display: none; /* Tersembunyi secara default */
+    margin-top: 20px;
+    padding: 15px;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    text-align: center;
+    width: 100%;
+    max-width: 500px; /* Atur lebar maksimum */
+}
+
+/* Penyesuaian untuk tema gelap */
+/*
+body.dark-theme #command-input-container {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+*/
+
+#command-input-container input {
+    width: calc(100% - 24px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 2px solid var(--btn-bg-light);
+    border-radius: 5px;
+}
+
+#command-input-container button {
+    margin: 5px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: var(--btn-bg-light);
+    color: white;
+    font-size: 16px;
+}
+
+#command-input-container button#cancel-command {
+    background-color: #d33;
+}
+
+/* Details Button */
+.details .btn {
+    display: inline-block;
+    margin-top: 14px;
+    padding: 6px 10px;
+    background-color: var(--btn-bg-light);
+    color: white;
+    border-radius: 10px;
+    font-size: 15px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.details .btn:hover {
+    background-color: var(--btn-bg-hover-light);
+    transform: scale(1.05);
+}
+
+/* Dark Theme */
+body.dark-theme {
+    background-color: var(--background-color-dark);
+    color: var(--text-color-dark);
+}
+
+body.dark-theme .container {
+    background-color: var(--container-bg-dark);
+    box-shadow: 0 6px 20px var(--container-shadow-dark);
+}
+
+body.dark-theme #typing-text,
+body.dark-theme .profile-info,
+body.dark-theme .name,
+body.dark-theme .from,
+body.dark-theme .bio,
+body.dark-theme .details p {
+    color: var(--text-color-dark);
+}
+
+body.dark-theme .details .btn {
+    background-color: var(--btn-bg-dark);
+    color: #000;
+}
+
+body.dark-theme .details .btn:hover {
+    background-color: var(--btn-bg-hover-dark);
+}
+
+body.dark-theme .theme-toggle i,
+body.dark-theme .settings-container i {
+    color: var(--icon-color-dark);
+}
+
+body.dark-theme .profile-card {	
+    background-color: var(--container-bg-dark);
+    box-shadow: 0 6px 20px var(--container-shadow-dark);
+}
+
+body.dark-theme .profile-img {
+    border-color: var(--btn-bg-dark);
+}
+
+body.dark-theme #command-input-container {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+body.dark-theme #command-input-container input {
+    border-color: var(--btn-bg-dark);
+}
+
+body.dark-theme #command-input-container button {
+    background-color: var(--btn-bg-dark);
+}
+
+body.dark-theme #command-input-container button#cancel-command {
+    background-color: #d33;
+}
